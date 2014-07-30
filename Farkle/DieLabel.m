@@ -19,4 +19,10 @@
     return self;
 }
 
+#pragma mark Actions
+-(IBAction)onTapped:(id)sender {
+    NSLog(@"Lable tapped");
+    [self.delegate roll];
+}
+
 @end

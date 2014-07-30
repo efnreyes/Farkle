@@ -7,8 +7,10 @@
 //
 
 #import "RootViewController.h"
+#import "DieLabel.h"
 
-@interface RootViewController ()
+@interface RootViewController () <DieLabelDelegate>
+@property (strong, nonatomic) IBOutlet DieLabel *dieLabel1;
 
 @end
 
@@ -20,10 +22,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark DieLabel delegate methods
+-(void)roll {
+    
 }
 
 @end
