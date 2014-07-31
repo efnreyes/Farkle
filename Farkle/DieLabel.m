@@ -10,19 +10,22 @@
 
 @implementation DieLabel
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code
+        self.isSelected = NO;
     }
     return self;
 }
 
+-(void)roll {
+    self.text = [NSString stringWithFormat:@"%d", arc4random()%6 + 1];
+}
+
 #pragma mark Actions
 -(IBAction)onTapped:(id)sender {
-    NSLog(@"Lable tapped");
-    [self.delegate roll];
+    [self.delegate didChooseDie:self];
 }
 
 @end
